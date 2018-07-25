@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         mPresenter = MainPresenter()
         mPresenter.setView(this@MainActivity)
 
+        supportActionBar?.title = "Tripper"
+
 
     }
 
