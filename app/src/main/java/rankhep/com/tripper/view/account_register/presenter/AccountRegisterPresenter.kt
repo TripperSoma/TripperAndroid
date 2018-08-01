@@ -1,10 +1,14 @@
 package rankhep.com.tripper.view.account_register.presenter
 
+import android.util.Log
+import org.json.JSONObject
 import rankhep.com.dhlwn.utils.NetworkHelper
 import rankhep.com.tripper.model.User
+import rankhep.com.tripper.model.UserCreate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.http.Field
 
 class AccountRegisterPresenter : AccountRegisterContract.Presenter {
 
@@ -26,12 +30,29 @@ class AccountRegisterPresenter : AccountRegisterContract.Presenter {
 
     }
 
+
     override fun registerUser(name: String, email: String, pwd: String, isMan: Boolean) {
+
+        var paramObject = JSONObject()
+        paramObject.put("device_token", " ")
+        paramObject.put("email", email)
+        paramObject.put("name", name)
+        paramObject.put("sex", if (isMan) 1 else 0)
+        paramObject.put("password", pwd)
+
+//
+//        var map = HashMap<String, String>()
+//        map.put("Content-Type", "application/json")
+//        map.put("Accept", "*/*")
+
         NetworkHelper.networkInstance
-                .registerUser(" ", email, name, if (isMan) 1 else 0, pwd)
+                .registerUser(paramObject)
                 .enqueue(object : Callback<User> {
                     override fun onResponse(call: Call<User>?, response: Response<User>?) {
-                        v.registerSuccess()
+                        if (response?.code() == 201)
+                            v.registerSuccess()
+                        else
+                            v.registerFail("" + response?.code())
                     }
 
                     override fun onFailure(call: Call<User>?, t: Throwable?) {

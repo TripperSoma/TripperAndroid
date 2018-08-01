@@ -11,11 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/typo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageView
         android:id="@+id/typo"
@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:src="@drawable/ic_typo"
+        app:layout_constraintBottom_toTopOf="@+id/emailEdit"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
@@ -36,6 +37,7 @@
         android:hint="이메인"
         android:paddingHorizontal="12dp"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/pwdEdit"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/typo" />
@@ -50,6 +52,8 @@
         android:inputType="textPassword"
         android:paddingHorizontal="12dp"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailEdit" />
@@ -65,6 +69,7 @@
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/detectId"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pwdEdit" />
@@ -75,10 +80,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center_horizontal"
+        android:text="아이디, 비밀번호 찾기"
         android:textColor="#202020"
         android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginBtn"
-        tools:text="아이디, 비밀번호 찾기" />
+        app:layout_constraintTop_toBottomOf="@id/loginBtn" />
 </android.support.constraint.ConstraintLayout>
