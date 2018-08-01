@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_register.*
 import rankhep.com.tripper.R
+import rankhep.com.tripper.view.account_register.AccountRegisterActivity
 import rankhep.com.tripper.view.login.LoginActivity
 import rankhep.com.tripper.view.register.presenter.RegisterContract
 import rankhep.com.tripper.view.register.presenter.RegisterPresenter
@@ -23,13 +24,13 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
         }
 
-        tripper_start.setOnClickListener {
+        tripper_container.setOnClickListener {
             tripperStart()
         }
     }
 
     override fun tripperStart() {
-        startActivity(Intent(this@RegisterActivity))
+        startActivity(Intent(this@RegisterActivity, AccountRegisterActivity::class.java))
     }
 
     override fun facebookStart() {

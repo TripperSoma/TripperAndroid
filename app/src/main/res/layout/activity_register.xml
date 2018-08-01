@@ -33,6 +33,7 @@
         app:shadowRadius="72dp">
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/tripper_container"
             android:layout_width="220dp"
             android:layout_height="33dp"
             android:background="@drawable/bg_round_square"
