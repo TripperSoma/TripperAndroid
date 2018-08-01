@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkHelper(private val context: Context) {
     companion object {
-        val url = "https://jhone-364e5.firebaseio.com/"
+        val url = "http://13.209.244.244:8080/"
 
         var retrofit: Retrofit? = null
 
