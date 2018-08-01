@@ -16,6 +16,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import android.support.design.widget.NavigationView
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
         }
         var adapter = MainReviewAdapter()
 
-        reviewList.layoutManager = GridLayoutManager(this, 2)
+        reviewList.layoutManager = GridLayoutManager(this, 2) as RecyclerView.LayoutManager
         reviewList.adapter = adapter
 
         navigation_view.setNavigationItemSelectedListener(this)

@@ -13,7 +13,6 @@ class MainPresenter : MainContract.Presenter {
     }
 
     override fun clickDrawerItem(item: MenuItem) {
-        item.isChecked = true
         v.closeDrawer()
         val id = item.itemId
         v.showToast(item.title.toString())
