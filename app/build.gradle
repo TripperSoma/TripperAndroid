@@ -41,4 +41,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.loopeer.lib:shadow:0.0.4-beta3'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
 }

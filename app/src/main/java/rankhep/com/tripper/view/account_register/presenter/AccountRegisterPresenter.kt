@@ -1,6 +1,8 @@
 package rankhep.com.tripper.view.account_register.presenter
 
 import android.util.Log
+import okhttp3.MediaType
+import okhttp3.RequestBody
 import org.json.JSONObject
 import rankhep.com.dhlwn.utils.NetworkHelper
 import rankhep.com.tripper.model.User
@@ -45,17 +47,18 @@ class AccountRegisterPresenter : AccountRegisterContract.Presenter {
 //        map.put("Content-Type", "application/json")
 //        map.put("Accept", "*/*")
 
+        Log.e("json", paramObject.toString())
         NetworkHelper.networkInstance
-                .registerUser(paramObject)
-                .enqueue(object : Callback<User> {
-                    override fun onResponse(call: Call<User>?, response: Response<User>?) {
+                .registerUser(RequestBody.create(MediaType.parse("application/json"), paramObject.toString()))  //RequestBody application/json
+                .enqueue(object : Callback<JSONObject> {
+                    override fun onResponse(call: Call<JSONObject>?, response: Response<JSONObject>?) {
                         if (response?.code() == 201)
                             v.registerSuccess()
                         else
                             v.registerFail("" + response?.code())
                     }
 
-                    override fun onFailure(call: Call<User>?, t: Throwable?) {
+                    override fun onFailure(call: Call<JSONObject>?, t: Throwable?) {
                         v.registerFail("" + t?.message)
                     }
 
