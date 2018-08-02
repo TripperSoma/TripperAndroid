@@ -5,11 +5,9 @@ import com.google.gson.JsonObject
 import okhttp3.RequestBody
 import org.json.JSONObject
 import rankhep.com.tripper.model.User
-import rankhep.com.tripper.model.UserCreate
 import retrofit2.Call
 import retrofit2.http.*
 import retrofit2.http.POST
-
 
 
 /**
@@ -17,20 +15,9 @@ import retrofit2.http.POST
  */
 
 interface RetrofitInterface {
-    //
-//    @POST("user/create")
-//    @FormUrlEncoded
-//    fun registerUser(@Field("device_token") deviceToken: String,
-//                     @Field("email") email: String,
-//                     @Field("name") name: String,
-//                     @Field("sex") sex: Int,
-//                     @Field("password") password: String,
-//                     @Header("Content-Type") contentType: String = "application/json",
-//                     @Header("Accept") Accept: String = "*/*"): Call<User>
+
     @POST("user/create/")
-    fun registerUser(@Body body: RequestBody): Call<JSONObject>
-
-
+    fun registerUser(@Body body: RequestBody): Call<User>
 //    @Header("Content-Type") contentType: String = "application/json",
 //    @Header("Accept") Accept: String = "*/*"
 //    {
@@ -41,5 +28,14 @@ interface RetrofitInterface {
 //        "sex": 0
 //    }
 
+    @POST("user/login/")
+    fun loginUser(@Body body: RequestBody): Call<User>
 
+//    {
+//        "user_num": 23,
+//        "email": "string",
+//        "name": "string",
+//        "sex": 0,
+//        "device_token": "string"
+//    }
 }

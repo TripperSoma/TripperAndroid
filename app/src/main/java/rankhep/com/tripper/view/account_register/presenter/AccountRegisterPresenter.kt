@@ -6,7 +6,6 @@ import okhttp3.RequestBody
 import org.json.JSONObject
 import rankhep.com.dhlwn.utils.NetworkHelper
 import rankhep.com.tripper.model.User
-import rankhep.com.tripper.model.UserCreate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,15 +49,15 @@ class AccountRegisterPresenter : AccountRegisterContract.Presenter {
         Log.e("json", paramObject.toString())
         NetworkHelper.networkInstance
                 .registerUser(RequestBody.create(MediaType.parse("application/json"), paramObject.toString()))  //RequestBody application/json
-                .enqueue(object : Callback<JSONObject> {
-                    override fun onResponse(call: Call<JSONObject>?, response: Response<JSONObject>?) {
+                .enqueue(object : Callback<User> {
+                    override fun onResponse(call: Call<User>?, response: Response<User>?) {
                         if (response?.code() == 201)
                             v.registerSuccess()
                         else
                             v.registerFail("" + response?.code())
                     }
 
-                    override fun onFailure(call: Call<JSONObject>?, t: Throwable?) {
+                    override fun onFailure(call: Call<User>?, t: Throwable?) {
                         v.registerFail("" + t?.message)
                     }
 
