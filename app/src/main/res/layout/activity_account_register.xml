@@ -123,7 +123,7 @@
     <TextView
         android:id="@+id/gender_text"
         android:layout_width="wrap_content"
-        android:layout_height="15dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="성별"
         android:textColor="@android:color/black"

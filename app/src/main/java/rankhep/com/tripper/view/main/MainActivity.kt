@@ -1,6 +1,6 @@
 package rankhep.com.tripper.view.main
 
-import android.graphics.Color
+import android.content.Intent
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
@@ -17,11 +17,18 @@ import android.view.MenuItem
 import android.widget.Toast
 import android.support.design.widget.NavigationView
 import android.support.v7.widget.RecyclerView
-import android.util.Log
-import android.view.View
+import rankhep.com.tripper.view.make_schedule.MakeScheduleActivity
+import rankhep.com.tripper.view.register.RegisterActivity
 
 
 class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNavigationItemSelectedListener, AppBarLayout.OnOffsetChangedListener {
+
+
+    companion object {
+        private const val USER_LOGIN = 333
+        private const val MAKE_SCHEDULE = 444
+    }
+
 
     lateinit var mPresenter: MainPresenter
 
@@ -31,7 +38,13 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
 
         mPresenter = MainPresenter()
         mPresenter.setView(this@MainActivity)
+        initView()
 
+
+    }
+
+
+    private fun initView() {
         setSupportActionBar(toolbar)
         supportActionBar?.run {
             title = "Tripper"
@@ -39,7 +52,7 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
             setDisplayHomeAsUpEnabled(true)
 
         }
-        var adapter = MainReviewAdapter()
+        val adapter = MainReviewAdapter()
 
         reviewList.layoutManager = GridLayoutManager(this, 2) as RecyclerView.LayoutManager
         reviewList.adapter = adapter
@@ -48,8 +61,10 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
 
         toolbar_container.addOnOffsetChangedListener(this)
 
+        set_location_btn.setOnClickListener {
+            mPresenter.startMakeScheduleButtonClick(trip_edit_text.text.toString())
+        }
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         return true
@@ -81,6 +96,7 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         mPresenter.clickDrawerItem(item)
+
         return true
     }
 
@@ -99,7 +115,7 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
     }
 
     override fun changeActionBar(color: Int) {
-        var menuBtn: Drawable = resources.getDrawable(R.drawable.ic_menu)
+        val menuBtn: Drawable = resources.getDrawable(R.drawable.ic_menu)
         menuBtn.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
 
         toolbar.run {
@@ -108,4 +124,14 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
         supportActionBar?.setHomeAsUpIndicator(menuBtn)
     }
 
+    override fun startLoginActivity() {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivityForResult(intent, USER_LOGIN)
+    }
+
+    override fun startMakeScheduleActivity(location: String) {
+        val intent = Intent(this, MakeScheduleActivity::class.java)
+        intent.putExtra("location", location)
+        startActivityForResult(intent, MAKE_SCHEDULE)
+    }
 }

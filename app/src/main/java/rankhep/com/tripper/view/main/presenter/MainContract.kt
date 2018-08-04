@@ -8,8 +8,10 @@ interface MainContract {
     interface View {
         fun openDrawer()
         fun closeDrawer()
-        fun showToast(str:String)
-        fun changeActionBar(color:Int)
+        fun showToast(str: String)
+        fun changeActionBar(color: Int)
+        fun startLoginActivity()
+        fun startMakeScheduleActivity(location: String)
     }
 
     interface Presenter {
@@ -17,5 +19,6 @@ interface MainContract {
         fun clickDrawerItem(item: MenuItem)
         fun closeActionBar()
         fun openActionBar()
+        fun startMakeScheduleButtonClick(location: String)
     }
 }
