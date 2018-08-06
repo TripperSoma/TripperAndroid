@@ -67,11 +67,20 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
+
+//
+//        val searchItem = menu.findItem(R.id.action_search)
+//        val searchView = MenuItemCompat.getActionView(searchItem) as SearchView
+//
+//        val searchManager = getSystemService<Any>(Context.SEARCH_SERVICE) as SearchManager
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+
         when (id) {
             android.R.id.home -> {
                 openDrawer()
