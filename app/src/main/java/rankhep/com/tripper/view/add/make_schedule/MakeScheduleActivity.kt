@@ -1,4 +1,4 @@
-package rankhep.com.tripper.view.make_schedule
+package rankhep.com.tripper.view.add.make_schedule
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

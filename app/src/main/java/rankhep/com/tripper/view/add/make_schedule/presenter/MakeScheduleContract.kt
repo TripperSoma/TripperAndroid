@@ -1,4 +1,4 @@
-package rankhep.com.tripper.view.make_schedule.presenter
+package rankhep.com.tripper.view.add.make_schedule.presenter
 
 interface MakeScheduleContract {
     interface View {
