@@ -8,6 +8,6 @@ class SetTasteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_set_taset)
+        setContentView(R.layout.activity_set_taste)
     }
 }

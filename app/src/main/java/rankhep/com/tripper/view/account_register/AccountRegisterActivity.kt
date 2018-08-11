@@ -1,5 +1,6 @@
 package rankhep.com.tripper.view.account_register
 
+import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -48,6 +49,8 @@ class AccountRegisterActivity : AppCompatActivity(), AccountRegisterContract.Vie
 
     override fun registerSuccess() {
         Toast.makeText(applicationContext, "회원가입 성공", Toast.LENGTH_SHORT).show()
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
     override fun showError(error: String) {

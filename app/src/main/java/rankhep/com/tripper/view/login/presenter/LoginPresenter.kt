@@ -38,7 +38,7 @@ class LoginPresenter : LoginContract.Presenter {
                             intent.putExtra("user", response.body())
                             v.loginSuccess(intent)
                         } else {
-                            v.loginFail("" + response?.code())
+                            v.loginFail("로그인 실패 : " + response?.code())
                         }
                     }
                 })
