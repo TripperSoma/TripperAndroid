@@ -88,19 +88,60 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:text="어떤 스타일로\n여행을 즐기고 싶으신가요?" />
+                android:text="어떤 스타일로\n여행을 즐기고 싶으신가요?" />
+
+            <rankhep.com.tripper.custom.TasteProgressBar
+                android:id="@+id/shopping_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:subTitle="여행을 하면서 쇼핑을 하는게 좋아요!"
+                app:title="shopping" />
+
+            <rankhep.com.tripper.custom.TasteProgressBar
+                android:id="@+id/food_progressbar"
+                android:layout_marginTop="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:subTitle="먹으러 가는게 여행 아니겠어요?"
+                app:title="Food" />
+
+            <rankhep.com.tripper.custom.TasteProgressBar
+                android:id="@+id/tourist_progressbar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="32dp"
+                android:layout_height="wrap_content"
+                app:subTitle="직접 발로 찾는 여행이 좋아요!"
+                app:title="Tourist" />
+
+            <rankhep.com.tripper.custom.TasteProgressBar
+                android:id="@+id/culture_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:subTitle="그 나라의 문화를 느끼는 여행이 좋아요!"
+                android:layout_marginTop="32dp"
+                app:title="Culture" />
+
+            <rankhep.com.tripper.custom.TasteProgressBar
+                android:id="@+id/entertainment_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:subTitle="그 나라만의 오락을 느끼고 싶어요!"
+                app:title="Entertainment" />
+
+
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
