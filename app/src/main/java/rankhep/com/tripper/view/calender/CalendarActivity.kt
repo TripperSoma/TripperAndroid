@@ -1,9 +1,8 @@
-package rankhep.com.tripper
+package rankhep.com.tripper.view.calender
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
-import kotlinx.android.synthetic.main.activity_calendar.*
+import rankhep.com.tripper.R
 
 class CalendarActivity : AppCompatActivity() {
 

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_set_taste.*
-import rankhep.com.tripper.CalendarActivity
+import rankhep.com.tripper.view.calender.CalendarActivity
 import rankhep.com.tripper.R
 
 class SetTasteActivity : AppCompatActivity() {

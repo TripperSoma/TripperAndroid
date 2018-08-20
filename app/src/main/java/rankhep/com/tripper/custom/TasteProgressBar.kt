@@ -15,23 +15,26 @@ import android.widget.SeekBar
 import rankhep.com.tripper.R
 
 
-class TasteProgressBar:ConstraintLayout {
+class TasteProgressBar : ConstraintLayout {
     private lateinit var progressBar: SeekBar
-    private lateinit var goodText:TextView
-    private lateinit var goodImg:ImageView
-    private lateinit var badText:TextView
-    private lateinit var badImg:ImageView
-    private lateinit var tasteTitle:TextView
-    private lateinit var tasteSubTitle:TextView
-    constructor(context:Context): super(context){
+    private lateinit var goodText: TextView
+    private lateinit var goodImg: ImageView
+    private lateinit var badText: TextView
+    private lateinit var badImg: ImageView
+    private lateinit var tasteTitle: TextView
+    private lateinit var tasteSubTitle: TextView
+
+    constructor(context: Context) : super(context) {
         initView()
 
     }
-    constructor(context: Context,attrs:AttributeSet):super(context,attrs){
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         initView()
         getAttrs(attrs)
     }
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int):super(context,attrs){
+
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs) {
         initView()
         getAttrs(attrs, defStyle)
     }

@@ -24,7 +24,7 @@
         <activity android:name=".view.account_register.AccountRegisterActivity" />
         <activity android:name=".view.add.make_schedule.MakeScheduleActivity" />
         <activity android:name=".view.add.set_taste.SetTasteActivity" />
-        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".view.calender.CalendarActivity"></activity>
     </application>
 
 </manifest>
