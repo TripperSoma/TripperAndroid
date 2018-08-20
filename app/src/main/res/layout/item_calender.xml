@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="@id/time_img"
         app:layout_constraintLeft_toRightOf="@id/time_img"
         app:layout_constraintTop_toTopOf="@id/time_img"
-        tools:text="09:00 AM" />
+        android:text="09:00 AM" />
 
     <ImageView
         android:id="@+id/edit_btn"
