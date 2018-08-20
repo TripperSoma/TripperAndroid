@@ -150,8 +150,7 @@
             <rankhep.com.tripper.custom.CheckYesOrNoView
                 android:id="@+id/with_old"
                 android:layout_width="match_parent"
-                android:layout_marginTop="32dp
-"
+                android:layout_marginTop="32dp"
                 app:withTitle="노약자 동반 여부"
                 app:imgSrc="@drawable/ic_accessible_black_24dp"
                 app:withSubTitle="노약자를 동반하는 경우를 참고해\n동선을 추천합니다."

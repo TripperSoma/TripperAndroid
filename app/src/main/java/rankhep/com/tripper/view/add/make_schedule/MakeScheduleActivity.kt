@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_make_schedule.*
+import kotlinx.android.synthetic.main.toolbar_account.*
 import rankhep.com.tripper.R
 import rankhep.com.tripper.view.add.set_taste.SetTasteActivity
 
@@ -16,15 +17,12 @@ class MakeScheduleActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        setSupportActionBar(make_schedule_toolbar)
-        supportActionBar?.run {
-            title = ""
-            setHomeAsUpIndicator(R.mipmap.ic_close)
-            setDisplayHomeAsUpEnabled(true)
-        }
+        back_btn.setImageResource(R.drawable.ic_close_black_24dp)
         next_fab.setOnClickListener {
             startActivity(Intent(this@MakeScheduleActivity, SetTasteActivity::class.java))
         }
-
+        back_btn.setOnClickListener {
+            finish()
+        }
     }
 }

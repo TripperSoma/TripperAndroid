@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".view.add.make_schedule.MakeScheduleActivity">
 
-    <android.support.v7.widget.Toolbar
+    <include
         android:id="@+id/make_schedule_toolbar"
+        layout="@layout/toolbar_account"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="?attr/actionBarSize" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/container"

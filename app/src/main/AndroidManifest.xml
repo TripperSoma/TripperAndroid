@@ -23,7 +23,8 @@
         <activity android:name=".view.register.RegisterActivity" />
         <activity android:name=".view.account_register.AccountRegisterActivity" />
         <activity android:name=".view.add.make_schedule.MakeScheduleActivity" />
-        <activity android:name=".view.add.set_taste.SetTasteActivity"></activity>
+        <activity android:name=".view.add.set_taste.SetTasteActivity" />
+        <activity android:name=".CalendarActivity"></activity>
     </application>
 
 </manifest>
