@@ -5,6 +5,8 @@ import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.support.design.widget.AppBarLayout
 import android.support.v7.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,20 +19,21 @@ import android.view.MenuItem
 import android.widget.Toast
 import android.support.design.widget.NavigationView
 import android.support.v7.widget.RecyclerView
+import rankhep.com.tripper.model.MainReviewListData
 import rankhep.com.tripper.view.add.make_schedule.MakeScheduleActivity
 import rankhep.com.tripper.view.register.RegisterActivity
 
 
 class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNavigationItemSelectedListener, AppBarLayout.OnOffsetChangedListener {
 
-
     companion object {
         private const val USER_LOGIN = 333
         private const val MAKE_SCHEDULE = 444
     }
 
-
+    var items = ArrayList<MainReviewListData>()
     lateinit var mPresenter: MainPresenter
+    private lateinit var mAdapter: MainReviewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,13 +55,12 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
             setDisplayHomeAsUpEnabled(true)
 
         }
-        val adapter = MainReviewAdapter()
-
+        mAdapter = MainReviewAdapter(items)
         reviewList.layoutManager = GridLayoutManager(this, 2) as RecyclerView.LayoutManager
-        reviewList.adapter = adapter
+        reviewList.adapter = mAdapter
 
+        mPresenter.getMainListData(items)
         navigation_view.setNavigationItemSelectedListener(this)
-
         toolbar_container.addOnOffsetChangedListener(this)
 
         set_location_btn.setOnClickListener {
@@ -134,5 +136,9 @@ class MainActivity : AppCompatActivity(), MainContract.View, NavigationView.OnNa
         val intent = Intent(this, MakeScheduleActivity::class.java)
         intent.putExtra("location", location)
         startActivityForResult(intent, MAKE_SCHEDULE)
+    }
+
+    override fun reloadMainList() {
+        mAdapter.notifyDataSetChanged()
     }
 }
