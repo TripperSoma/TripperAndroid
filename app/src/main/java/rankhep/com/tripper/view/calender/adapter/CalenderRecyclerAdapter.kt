@@ -1,4 +1,4 @@
-package rankhep.com.tripper.view.calender
+package rankhep.com.tripper.view.calender.adapter
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView

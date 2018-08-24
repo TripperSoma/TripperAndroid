@@ -14,17 +14,19 @@
         <activity android:name=".view.main.MainActivity" />
         <activity android:name=".view.login.LoginActivity" />
         <activity android:name=".view.SplashActivity">
+
+        </activity>
+        <activity android:name=".view.register.RegisterActivity" />
+        <activity android:name=".view.account_register.AccountRegisterActivity" />
+        <activity android:name=".view.add.make_schedule.MakeScheduleActivity" />
+        <activity android:name=".view.add.set_taste.SetTasteActivity" />
+        <activity android:name=".view.calender.CalendarActivity" android:theme="@style/CalenderTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.register.RegisterActivity" />
-        <activity android:name=".view.account_register.AccountRegisterActivity" />
-        <activity android:name=".view.add.make_schedule.MakeScheduleActivity" />
-        <activity android:name=".view.add.set_taste.SetTasteActivity" />
-        <activity android:name=".view.calender.CalendarActivity"></activity>
     </application>
 
 </manifest>

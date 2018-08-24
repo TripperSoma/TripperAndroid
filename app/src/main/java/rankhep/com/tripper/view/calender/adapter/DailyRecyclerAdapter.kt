@@ -1,4 +1,4 @@
-package rankhep.com.tripper.view.calender
+package rankhep.com.tripper.view.calender.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ class DailyRecyclerAdapter(items: ArrayList<Time>) : RecyclerView.Adapter<DailyR
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val holder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_daily, parent,false))
+        val holder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_daily, parent, false))
 
         return holder
     }
